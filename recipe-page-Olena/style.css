@@ -1,0 +1,231 @@
+:root {
+  --border-img-div: 12px;
+  --color: #854632;
+  --marker-preparation-time: #7a284e;
+  --marker-ingredients: #854632;
+  --marker-instructions: #854632;
+  --color-li: #5f564d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+a,
+ul,
+ol,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f3e5d7;
+}
+
+img {
+  max-width: 656px;
+  height: 100%;
+  margin-bottom: 8px;
+  border-radius: var(--border-img-div);
+}
+
+main {
+  max-width: 736px;
+  margin: 128px auto;
+  /* min-height: 1700px; */
+  padding: 40px;
+  background-color: white;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Young Serif", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  color: #312e2c;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 24px;
+}
+
+h2 {
+  color: var(--color);
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 100%;
+  margin-bottom: 24px;
+}
+
+p {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-li);
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #e3ddd7;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+/* Блок часу приготування */
+section.preparation-time {
+  padding: 24px;
+  background-color: #fff7fb;
+  border-radius: var(--border-img-div);
+
+  p {
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: #7a284e;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+  }
+  ul {
+    list-style-position: inside;
+
+    li {
+      color: var(--color-li);
+      &::before {
+        content: "";
+        margin-left: 20px;
+      }
+      &::marker {
+        color: var(--marker-preparation-time);
+      }
+
+      &:nth-child(-n + 2) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+/* Блок інгредієнтів */
+section.ingredients {
+  li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  li {
+    color: var(--color-li);
+    &::before {
+      content: "";
+      margin-left: 20px;
+    }
+    &::marker {
+      color: var(--marker-ingredients);
+    }
+  }
+}
+
+/* Блок інструкцій */
+section.instructions {
+  ol {
+    list-style-position: outside;
+    padding-left: 20px;
+
+    li {
+      font-family: "Gabarito", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 1.5;
+      padding-left: 16px;
+      color: var(--color-li);
+
+      &::marker {
+        font-weight: bold;
+        font-family: "Outfit", sans-serif;
+        font-size: 16px;
+        color: var(--marker-instructions);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+/* Блок калорії */
+section.nutrition {
+  /* min-height: 268px; */
+  p {
+    margin-bottom: 24px;
+  }
+
+  .nutrition-content {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+
+    div {
+      width: 100%;
+
+      p {
+        display: flex;
+        align-items: center;
+        padding: 11px 2px 12px 31px;
+        border-bottom: 1px solid #e3ddd7;
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .nutrition-labels p {
+      font-weight: 400;
+      color: var(--color-li);
+    }
+
+    .nutrition-values p {
+      font-weight: 700;
+      padding-left: 8px;
+      /* text-align: left; */
+      color: var(--color);
+    }
+  }
+}
+.nutrition-content {
+}
+.nutrition-labels {
+}
+.nutrition-values {
+}
